@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
+    /* git commit test */
+
     <Button
         android:id="@+id/button3"
         android:layout_width="213dp"
