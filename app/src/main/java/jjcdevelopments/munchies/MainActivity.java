@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,14 +12,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button Login = (Button) findViewById(R.id.LogBtn);
+        Button Register = (Button) findViewById(R.id.RegBtn);
+        Login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Login(view);
+            }
+        });
     }
 
-    /**
-     * Called when the user taps the Login button
-     */
-    public void SearchPageView(View view) {
-        Intent SearchPage = new Intent(getApplicationContext(), FeedMeActivity.class);
-
-        startActivity(SearchPage);
+    private void Login(View v){
+        Intent intent = new Intent(this, FeedMe.class);
+        startActivity(intent);
     }
 }
