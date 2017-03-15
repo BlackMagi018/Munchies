@@ -1,7 +1,7 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="File '[app] - ...\app\src\main\res\layout-land\activity_main.xml'" />
-    <option name="defaultScopeName" value="File '[app] - ...\app\src\main\res\layout-land\activity_main.xml'" />
-    <option name="SEARCH_SCOPE" value="File '[app] - ...\app\src\main\res\layout-land\activity_main.xml'" />
+    <option name="customScope" value="Project 'Munchies'" />
+    <option name="defaultScopeName" value="Project 'Munchies'" />
+    <option name="SEARCH_SCOPE" value="Project 'Munchies'" />
   </component>
 </application>
