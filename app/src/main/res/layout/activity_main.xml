@@ -17,7 +17,8 @@
         android:background="@drawable/shape"
         android:text="Login"
         app:layout_constraintTop_toBottomOf="@+id/editText2"
-        tools:layout_editor_absoluteX="52dp" />
+        android:layout_marginLeft="52dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <EditText
         android:id="@+id/editText"
@@ -27,15 +28,16 @@
         android:hint="Username"
         android:inputType="textPersonName"
         android:background="@drawable/shape"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="95dp"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.07" />
+        android:layout_marginLeft="52dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintVertical_bias="0.302"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0" />
 
     <EditText
         android:id="@+id/editText2"
@@ -45,9 +47,13 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:background="@drawable/shape"
-        android:layout_marginTop="30dp"
-        tools:layout_editor_absoluteX="52dp"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        android:layout_marginLeft="52dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0" />
 
     <Button
         android:id="@+id/RegBtn"
@@ -58,6 +64,9 @@
         android:layout_marginTop="47dp"
         app:layout_constraintTop_toBottomOf="@+id/editText2"
         app:layout_constraintLeft_toRightOf="@+id/LogBtn"
-        android:layout_marginLeft="104dp" />
+        android:layout_marginLeft="104dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>
