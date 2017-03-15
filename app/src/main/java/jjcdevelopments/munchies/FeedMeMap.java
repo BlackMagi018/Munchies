@@ -44,6 +44,5 @@ public class FeedMeMap extends FragmentActivity implements OnMapReadyCallback {
         LatLng Me = new LatLng(42.96613, -85.88734);
         mMap.addMarker(new MarkerOptions().position(Me).title("Current Location"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(Me));
-        mMap.setMinZoomPreference(25);
     }
 }
