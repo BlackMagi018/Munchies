@@ -24,10 +24,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".FeedMe"
-            android:label="@string/title_activity_feed_me"
-            android:theme="@style/AppTheme.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -40,9 +36,8 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".FeedMeMap"
-            android:label="@string/title_activity_feed_me_map"></activity>
+        <activity android:name=".FeedMe" />
+        <activity android:name=".SearchResults"></activity>
     </application>
 
 </manifest>
