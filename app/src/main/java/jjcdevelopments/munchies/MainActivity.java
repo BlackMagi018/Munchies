@@ -1,10 +1,11 @@
 package jjcdevelopments.munchies;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,18 +14,31 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        EditText User = (EditText) findViewById(R.id.Username);
+        EditText Pass = (EditText) findViewById(R.id.Password);
         Button Login = (Button) findViewById(R.id.LogBtn);
-        //Button Register = (Button) findViewById(R.id.RegBtn);
+        Button Register = (Button) findViewById(R.id.RegBtn);
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Login();
             }
         });
+        Register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Register();
+            }
+        });
     }
 
     private void Login(){
-        Intent intent = new Intent(this, FeedMe.class);
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
+    }
+
+    private void Register(){
+        Intent intent = new Intent(this, Register.class);
         startActivity(intent);
     }
 }
