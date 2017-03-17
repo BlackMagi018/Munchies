@@ -19,8 +19,8 @@ public class ExampleInstrumentedTest {
 
     /**
      *
-     * @throws Exception
-     * Checks for correct package
+     * @throws Exception Checks for correct package
+     *
      */
     @Test
     public void useAppContext() throws Exception {
