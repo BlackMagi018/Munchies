@@ -6,24 +6,30 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * Creates the main page.
+ */
+public final class MainActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button Login = (Button) findViewById(R.id.LogBtn);
+        Button login = (Button) findViewById(R.id.LogBtn);
         //Button Register = (Button) findViewById(R.id.RegBtn);
-        Login.setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Login();
+            public void onClick(final View view) {
+                login();
             }
         });
     }
 
-    private void Login(){
+    /**
+     * Displays the login/register page.
+     */
+    private void login() {
         Intent intent = new Intent(this, FeedMe.class);
         startActivity(intent);
     }
