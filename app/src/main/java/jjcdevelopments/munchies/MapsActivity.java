@@ -1,8 +1,10 @@
 package jjcdevelopments.munchies;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
@@ -36,7 +38,7 @@ import java.util.ArrayList;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
-        LocationListener {
+        LocationListener, GoogleMap.OnMarkerClickListener {
 
     private GoogleMap Map;
     GoogleApiClient mGoogleApiClient;
@@ -53,40 +55,147 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        ArrayList<Entries> Entries = GetEntries();
 
-        final ListView LV = (ListView) findViewById(R.id.listView);
-        LV.setAdapter(new EntriesAdapter(this, Entries));
-
-
-        LV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-                Object o = LV.getItemAtPosition(position);
-                Entries fullObject = (Entries) o;
-
-            }
-        });
     }
 
     private ArrayList<Entries> GetEntries(){
         ArrayList<Entries> results = new ArrayList<Entries>();
 
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/munchies", "Loganjer", "Password");
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from businesses");
-            while (rs.next()){
-                System.out.println(rs.getInt(1) + "  " + rs.getString(2) + "  " + rs.getString(3) + "  " + rs.getString(4));
-                Entries Entry = new Entries(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getDouble(7),rs.getDouble(8));
-                results.add(Entry);
-            }
-            con.close();
-        }catch(Exception e){
-            System.out.println(e);
-        }
+        Entries Entry = new Entries();
+        Entry.setName("Mancino's Pizza & Grinders");
+        Entry.setAddr("4639 Lake Michigan Dr, Allendale, MI 49401");
+        Entry.setType("Pizza & Sandwhiches");
+        Entry.setPrice("$$");
+        Entry.setLat(42.972696);
+        Entry.setLng(-85.900018);
+        LatLng latLng = new LatLng(Entry.getLat(),Entry.getLng());
+        MarkerOptions markerOptions = new MarkerOptions();
+        markerOptions.position(latLng);
+        markerOptions.title(Entry.getName());
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        Map.addMarker(markerOptions);
+        results.add(Entry);
 
+        Entry = new Entries();
+
+        Entry.setName("Main Street Pub");
+        Entry.setAddr("11240 University Parkway,Allendale,MI 49401");
+        Entry.setType("American Sitdown");
+        Entry.setPrice("$$");
+        Entry.setLat(42.973119);
+        Entry.setLng(-85.906472);
+        latLng = new LatLng(Entry.getLat(),Entry.getLng());
+        markerOptions = new MarkerOptions();
+        markerOptions.position(latLng);
+        markerOptions.title(Entry.getName());
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        Map.addMarker(markerOptions);
+        results.add(Entry);
+
+        Entry = new Entries();
+        Entry.setName("Grand Coney");
+        Entry.setAddr("6101 Lake Michigan Dr, Allendale, MI 49401");
+        Entry.setType("American & Coneys");
+        Entry.setPrice("$$");
+        Entry.setLat(42.974009);
+        Entry.setLng(-85.934936);
+        latLng = new LatLng(Entry.getLat(),Entry.getLng());
+        markerOptions = new MarkerOptions();
+        markerOptions.position(latLng);
+        markerOptions.title(Entry.getName());
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        Map.addMarker(markerOptions);
+        results.add(Entry);
+
+        Entry = new Entries();
+        Entry.setName("Aroy Thai");
+        Entry.setAddr("11221 Commerce Dr, Allendale,MI 49401");
+        Entry.setType("Thai");
+        Entry.setPrice("$");
+        Entry.setLat(42.972790);
+        Entry.setLng(-85.921100);
+        latLng = new LatLng(Entry.getLat(),Entry.getLng());
+        markerOptions = new MarkerOptions();
+        markerOptions.position(latLng);
+        markerOptions.title(Entry.getName());
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        Map.addMarker(markerOptions);
+        results.add(Entry);
+
+        Entry = new Entries();
+        Entry.setName("Jimmy John's");
+        Entry.setAddr("4814 Lake Michigan Dr, Allendale, MI 49401");
+        Entry.setType("Sub & Club Sandwhiches");
+        Entry.setPrice("$");
+        Entry.setLat(42.971537);
+        Entry.setLng(-85.904697);
+        latLng = new LatLng(Entry.getLat(),Entry.getLng());
+        markerOptions = new MarkerOptions();
+        markerOptions.position(latLng);
+        markerOptions.title(Entry.getName());
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        Map.addMarker(markerOptions);;
+        results.add(Entry);
+
+        Entry = new Entries();
+        Entry.setName("Burger King");
+        Entry.setAddr("4842 Lake Michigan Drive, Allendale, MI 49401");
+        Entry.setType("American Fast Food");
+        Entry.setPrice("$");
+        Entry.setLat(42.971904);
+        Entry.setLng(-85.905397);
+        latLng = new LatLng(Entry.getLat(),Entry.getLng());
+        markerOptions = new MarkerOptions();
+        markerOptions.position(latLng);
+        markerOptions.title(Entry.getName());
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        Map.addMarker(markerOptions);
+        results.add(Entry);
+
+        Entry = new Entries();
+        Entry.setName("Taco Bell");
+        Entry.setAddr("4989 Lake Michigan Dr, Allendale, MI 49401");
+        Entry.setType("Mexican Fast Food");
+        Entry.setPrice("$");
+        Entry.setLat(42.972815);
+        Entry.setLng(-85.909186);
+        latLng = new LatLng(Entry.getLat(),Entry.getLng());
+        markerOptions = new MarkerOptions();
+        markerOptions.position(latLng);
+        markerOptions.title(Entry.getName());
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        Map.addMarker(markerOptions);
+        results.add(Entry);
+
+        Entry = new Entries();
+        Entry.setName("El Aztecas Mexican Restaurant");
+        Entry.setAddr("6031 Lake Michigan Dr, Allendale, MI 49401");
+        Entry.setType("Mexican");
+        Entry.setPrice("$$");
+        Entry.setLat(42.972780);
+        Entry.setLng(-85.934764);
+        latLng = new LatLng(Entry.getLat(),Entry.getLng());
+        markerOptions = new MarkerOptions();
+        markerOptions.position(latLng);
+        markerOptions.title(Entry.getName());
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        Map.addMarker(markerOptions);
+        results.add(Entry);
+
+        Entry = new Entries();
+        Entry.setName("Peppino's Pizzeria & Sports Grille");
+        Entry.setAddr("5065 Lake Michigan Dr, Allendale, MI 49401");
+        Entry.setType("Italian");
+        Entry.setPrice("$$");
+        Entry.setLat(42.972816);
+        Entry.setLng(-85.911117);
+        latLng = new LatLng(Entry.getLat(),Entry.getLng());
+        markerOptions = new MarkerOptions();
+        markerOptions.position(latLng);
+        markerOptions.title(Entry.getName());
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        Map.addMarker(markerOptions);
+        results.add(Entry);
 
         return results;
     }
@@ -109,6 +218,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             buildGoogleApiClient();
             Map.setMyLocationEnabled(true);
         }
+
+        ArrayList<Entries> Entries = GetEntries();
+
+        final ListView LV = (ListView) findViewById(R.id.listView);
+        LV.setAdapter(new EntriesAdapter(this, Entries));
+
+
+        LV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+                Object o = LV.getItemAtPosition(position);
+                Entries Ob = (Entries) o;
+                LatLng latLng = new LatLng(Ob.getLat(),Ob.getLng());
+                Map.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                Map.animateCamera(CameraUpdateFactory.zoomTo(20));
+
+            }
+        });
+
+        Map.setOnMarkerClickListener(this);
     }
 
     protected synchronized void buildGoogleApiClient() {
@@ -153,7 +282,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
         markerOptions.title("Current Position");
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
         mCurrLocationMarker = Map.addMarker(markerOptions);
 
         //move map camera
@@ -236,5 +365,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             // other 'case' lines to check for other permissions this app might request.
             // You can add here other case statements according to your requirement.
         }
+    }
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        LatLng locale = marker.getPosition();
+        Uri gmmIntentUri = Uri.parse("geo:"+locale.latitude+","+locale.longitude+"?q="+marker.getTitle());
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        if (mapIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(mapIntent);
+        }
+        return true;
     }
 }

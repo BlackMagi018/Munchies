@@ -55,7 +55,7 @@ public class EntriesAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.marker.setImageDrawable(Drawable.createFromPath("@drawable/marker"));
+        holder.marker.setImageDrawable(Drawable.createFromPath("@drawable/marker.png"));
         holder.bname.setText(Entries.get(position).getName());
         holder.baddr.setText(Entries.get(position).getAddr());
         holder.bcuis.setText(Entries.get(position).getType());
