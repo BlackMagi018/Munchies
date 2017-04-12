@@ -2,6 +2,7 @@ package jjcdevelopments.munchies;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.DrawableRes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,12 +56,11 @@ public class EntriesAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.marker.setImageDrawable(Drawable.createFromPath("@drawable/marker.png"));
+        holder.marker.setImageResource(R.drawable.marker);
         holder.bname.setText(Entries.get(position).getName());
         holder.baddr.setText(Entries.get(position).getAddr());
         holder.bcuis.setText(Entries.get(position).getType());
         holder.bprice.setText(Entries.get(position).getPrice());
-
         return convertView;
     }
 

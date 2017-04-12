@@ -73,7 +73,7 @@ public final class MainActivity extends AppCompatActivity {
     }
 
     private void register(){
-        Intent intent = new Intent(this, Register.class);
+        Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
     }
 }

@@ -72,7 +72,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
         markerOptions.title(Entry.getName());
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
         Map.addMarker(markerOptions);
         results.add(Entry);
 
@@ -88,7 +88,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
         markerOptions.title(Entry.getName());
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
         Map.addMarker(markerOptions);
         results.add(Entry);
 
@@ -103,7 +103,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
         markerOptions.title(Entry.getName());
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
         Map.addMarker(markerOptions);
         results.add(Entry);
 
@@ -118,7 +118,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
         markerOptions.title(Entry.getName());
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
         Map.addMarker(markerOptions);
         results.add(Entry);
 
@@ -133,7 +133,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
         markerOptions.title(Entry.getName());
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
         Map.addMarker(markerOptions);;
         results.add(Entry);
 
@@ -148,7 +148,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
         markerOptions.title(Entry.getName());
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
         Map.addMarker(markerOptions);
         results.add(Entry);
 
@@ -163,7 +163,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
         markerOptions.title(Entry.getName());
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
         Map.addMarker(markerOptions);
         results.add(Entry);
 
@@ -178,7 +178,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
         markerOptions.title(Entry.getName());
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
         Map.addMarker(markerOptions);
         results.add(Entry);
 
@@ -193,7 +193,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
         markerOptions.title(Entry.getName());
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
         Map.addMarker(markerOptions);
         results.add(Entry);
 
@@ -224,7 +224,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         final ListView LV = (ListView) findViewById(R.id.listView);
         LV.setAdapter(new EntriesAdapter(this, Entries));
 
-
         LV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> a, View v, int position, long id) {
@@ -232,8 +231,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 Entries Ob = (Entries) o;
                 LatLng latLng = new LatLng(Ob.getLat(),Ob.getLng());
                 Map.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-                Map.animateCamera(CameraUpdateFactory.zoomTo(20));
-
+                Map.animateCamera(CameraUpdateFactory.zoomTo(17));
             }
         });
 
@@ -282,12 +280,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
         markerOptions.title("Current Position");
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
         mCurrLocationMarker = Map.addMarker(markerOptions);
 
         //move map camera
         Map.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-        Map.animateCamera(CameraUpdateFactory.zoomTo(14));
+        Map.animateCamera(CameraUpdateFactory.zoomTo(15));
 
         //stop location updates
         if (mGoogleApiClient != null) {
