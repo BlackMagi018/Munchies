@@ -1,0 +1,12 @@
+[
+  {
+    "featureType": "poi.restaurant",
+    "elementType": "all",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  }
+
+]
