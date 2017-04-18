@@ -8,12 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.net.URL;
-import java.net.URLConnection;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 
 /**
@@ -58,18 +52,18 @@ public final class MainActivity extends AppCompatActivity {
      */
     private void login(){
 
-            EditText User = (EditText) findViewById(R.id.Username);
-            EditText Pass = (EditText) findViewById(R.id.Password);
+            //EditText User = (EditText) findViewById(R.id.Username);
+            //EditText Pass = (EditText) findViewById(R.id.Password);
 
-            String username = User.getText().toString();
-            String password = Pass.getText().toString();
-            String pair = username + ":" + password;
-           if(Users.contains(pair)){
-            Intent intent = new Intent(this, FeedMe.class);
+            //String username = User.getText().toString();
+            //String password = Pass.getText().toString();
+            //String pair = username + ":" + password;
+           //if(Users.contains(pair)){
+            Intent intent = new Intent(this, Menu.class);
             startActivity(intent);
-               }else{
-               Toast.makeText(this, "Incorrect Username/Password", Toast.LENGTH_LONG).show();
-           }
+               //}else{
+               //Toast.makeText(this, "Incorrect Username/Password", Toast.LENGTH_LONG).show();
+           //}
     }
 
     private void register(){

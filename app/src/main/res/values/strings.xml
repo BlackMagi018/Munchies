@@ -5,4 +5,8 @@
     <string name="jj"> Name: Taco Bell \n Food Type: Mexican Fast Food \n Hours: 7AM-5AM \n Price Point: $</string>
     <string name="title_activity_maps">Food Nearby</string>
     <string name="title_activity_find_food">Map</string>
+    <string name="find_me_food">Find Me Food</string>
+    <string name="meal_planner">Meal Planner</string>
+    <string name="saved_meals">Saved Meals</string>
+    <string name="textview">TextView</string>
 </resources>

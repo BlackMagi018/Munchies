@@ -35,7 +35,7 @@ public class Register extends AppCompatActivity {
 
     private void Register(){
         if(pass1.getText().toString().equals(pass2.getText().toString())){
-            Intent intent = new Intent(this, FeedMe.class);
+            Intent intent = new Intent(this, Menu.class);
             startActivity(intent);
         }else{
             Toast.makeText(this, "Passwords don't match", Toast.LENGTH_LONG).show();
