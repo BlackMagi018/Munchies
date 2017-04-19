@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="350dp"
+    android:layout_height="50dp"
     android:minHeight="80dp"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:weightSum="1">
 
     <GridLayout
-        android:layout_width="match_parent"
+        android:layout_width="225dp"
         android:layout_height="match_parent"
+        android:layout_weight="0.89"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/mName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:text="@string/name1"
             android:textColor="@android:color/black"
             android:textSize="14sp" />
 
@@ -22,7 +24,7 @@
             android:id="@+id/mAddr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Addr"
+            android:text="@string/addr"
             android:textColor="@android:color/black"
             android:textSize="14sp" />
 
@@ -30,14 +32,14 @@
             android:id="@+id/mAddr2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Addr2"
+            android:text="@string/addr2"
             android:textColor="@android:color/black"
             android:textSize="14sp" />
 
     </GridLayout>
 
     <GridLayout
-        android:layout_width="match_parent"
+        android:layout_width="125dp"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
@@ -45,7 +47,7 @@
             android:id="@+id/mDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Date"
+            android:text="@string/date1"
             android:textColor="@android:color/black"
             android:textSize="14sp" />
 
@@ -53,7 +55,7 @@
             android:id="@+id/mTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Time"
+            android:text="@string/time1"
             android:textColor="@android:color/black"
             android:textSize="14sp" />
 

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
@@ -24,6 +25,7 @@ public class Meal_Plan extends AppCompatActivity {
     Button submit;
     EditText DateSel;
     EditText TimeSel;
+    Switch aSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class Meal_Plan extends AppCompatActivity {
         Addr2 = (TextView) findViewById(R.id.rAddress2);
         DateSel = (EditText) findViewById(R.id.DateSel);
         TimeSel = (EditText) findViewById(R.id.TimeSel);
+        aSwitch = (Switch) findViewById(R.id.switch1) ;
         submit = (Button) findViewById(R.id.submit);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,13 +49,20 @@ public class Meal_Plan extends AppCompatActivity {
 
     private void Submit() {
         Intent i = new Intent(this,Planner.class);
-        String data = Name.getText() + "!" + Addr.getText() + "!" + Addr2.getText() + "!" + DateSel.getText().toString() + "!" + TimeSel.getText().toString();
-
+        String s = "";
+        if(aSwitch.isChecked() == true){
+            s = "PM";
+        }
+        else {
+            s = "AM";
+        }
         //Create the bundle
-        Bundle bundle = new Bundle();
+        Bundle bundle = getIntent().getExtras();
+        String save = bundle.getString("Meals");
 
-        //Add your data to bundle
-        bundle.putString("Meals", data);
+        String data = Name.getText() + "!" + Addr.getText() + "!" + Addr2.getText() + "!" + DateSel.getText().toString() + "!" + TimeSel.getText().toString() + " " + s + "#";
+        data = save + data;
+        bundle.putString("Meals",data);
 
         //Add the bundle to the intent
         i.putExtras(bundle);
