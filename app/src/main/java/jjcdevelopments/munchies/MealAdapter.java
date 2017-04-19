@@ -25,24 +25,24 @@ public class MealAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 0;
+        return Meals.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return Meals.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
-        MealAdapter.ViewHolder holder;
+        ViewHolder holder;
         if (convertView == null) {
             convertView = Inflater.inflate(R.layout.activity_mealentry, null);
-            holder = new MealAdapter.ViewHolder();
+            holder = new ViewHolder();
             holder.mName =(TextView) convertView.findViewById(R.id.mName);
             holder.mAddr = (TextView) convertView.findViewById(R.id.mAddr);
             holder.mAddr2 = (TextView) convertView.findViewById(R.id.mAddr2);
@@ -51,7 +51,7 @@ public class MealAdapter extends BaseAdapter {
 
             convertView.setTag(holder);
         } else {
-            holder = (MealAdapter.ViewHolder) convertView.getTag();
+            holder = (ViewHolder) convertView.getTag();
         }
 
         holder.mName.setText(Meals.get(position).getName());

@@ -46,7 +46,7 @@ public class Meal_Plan extends AppCompatActivity {
 
     private void Submit() {
         Intent i = new Intent(this,Planner.class);
-        String data = Name.getText() + "!" + Addr.getText() + "!" + Addr2.getText() + "!" + DateSel.getText() + "!" + TimeSel.getText();
+        String data = Name.getText() + "!" + Addr.getText() + "!" + Addr2.getText() + "!" + DateSel.getText().toString() + "!" + TimeSel.getText().toString();
 
         //Create the bundle
         Bundle bundle = new Bundle();

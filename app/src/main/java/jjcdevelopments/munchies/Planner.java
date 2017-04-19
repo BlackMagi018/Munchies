@@ -14,7 +14,6 @@ public class Planner extends AppCompatActivity {
 
     FloatingActionButton Add;
     ArrayList<Meal>Meals;
-    ListView LV;
     Bundle holder;
 
 
@@ -24,7 +23,7 @@ public class Planner extends AppCompatActivity {
         setContentView(R.layout.activity_planner);
         Meals = new ArrayList<Meal>();
         Add = (FloatingActionButton) findViewById(R.id.AddMealBtn);
-        LV = (ListView) findViewById(R.id.meals);
+        final ListView LV = (ListView) findViewById(R.id.meals);
         Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
