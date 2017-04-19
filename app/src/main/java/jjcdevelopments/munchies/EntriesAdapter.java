@@ -1,18 +1,14 @@
 package jjcdevelopments.munchies;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.support.annotation.DrawableRes;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
-
-import static jjcdevelopments.munchies.R.drawable.marker;
 
 
 /**
@@ -61,6 +57,7 @@ public class EntriesAdapter extends BaseAdapter {
         holder.baddr.setText(Entries.get(position).getAddr());
         holder.bcuis.setText(Entries.get(position).getType());
         holder.bprice.setText(Entries.get(position).getPrice());
+
         return convertView;
     }
 
