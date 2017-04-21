@@ -1,20 +1,20 @@
 package jjcdevelopments.munchies;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
-import com.google.android.gms.location.places.ui.PlacePicker;
 
 /**
  * Creates the Menu page.
  */
 public final class Menu extends AppCompatActivity {
 
+    /**
+     * Creates Menu Layout and creates listeners for the buttons
+     * @param savedInstanceState - State of Instance
+     */
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,11 +37,17 @@ public final class Menu extends AppCompatActivity {
         });
     }
 
+    /**
+     * Starts Feed Me Activity
+     */
     private void Search(){
         Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Starts Planner Activity
+     */
     private void Plan(){
         Intent intent = new Intent(this,Planner.class);
         startActivity(intent);
